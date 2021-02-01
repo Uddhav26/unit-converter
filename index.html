@@ -1,0 +1,172 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Unit Converter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="units.js" type="text/javascript">//</script>
+    <script src="obj.js" type="text/javascript">//</script>
+  </head>
+<style>
+  #box{
+    padding-top: 100px;
+    padding-left: 400px;
+    padding-right: 400px;
+  }
+  .tb{
+    height: 30px;
+    width: 450px;
+  }
+</style>
+  <body>
+    <div id="box">
+    <h1>Unit Converter</h1>
+
+    <select id="grpSelect" class="tb" onchange="grpSwitch()">
+      <option value="grpTime">Time</option>
+      <option value="grpIT">File Size or Internet Speed</option>
+      <option value="grpTemperature">Temperature</option>
+      <option value="grpLength">Length</option>
+
+      
+      
+    </select>
+
+      <div id="grpTime">
+        <h3>Time</h3>
+      <input class="tb" type="number" placeholder= "Enter the value" min="1" id="timeamt" onkeyup="convUnits('time')">
+      <br>
+      <br>
+      from
+      <br>
+      <br>
+       <select id="timefr" class="tb" onchange="convUnits('time')">
+        <option value="Ms">millisecond</option>
+        <option value="Sec">seconds</option>
+        <option value="Min">minutes</option>
+        <option SELECTED value="Hr">hour</option>
+        <option value="Day">day</option>
+        <option value="Wk">week</option>
+        <option value="Mo">month</option>
+        <option value="Yr">year</option>
+        <option value="Dec">decade</option>
+        <option value="C">century</option>
+      </select>
+      <br>
+      <br>
+      to 
+      <br>
+      <br>
+      <select id="timeto" class="tb" onchange="convUnits('time')">
+        <option value="Ms">millisecond</option>
+        <option SELECTED value="Sec">seconds</option>
+        <option value="Min">minutes</option>
+        <option value="Hr">hour</option>
+        <option value="Day">day</option>
+        <option value="Wk">week</option>
+        <option value="Mo">month</option>
+        <option value="Yr">year</option>
+        <option value="Dec">decade</option>
+        <option value="C">century</option>
+      </select>
+     </div>
+
+      <div id="grpLength" style="display:none;">
+        <h3>Length</h3>
+        <input class="tb" type="number" placeholder= "Enter the value" min="1" id="lgthamt" onkeyup="convUnits('lgth')">
+        <br>
+      <br>
+        from <br>
+      <br>
+      <select id="lgthfr" class="tb" onchange="convUnits('lgth')">
+          <option value="Mm">millimeter</option>
+          <option value="Cm">centimeter</option>
+          <option value="M">meter</option>
+          <option SELECTED value="In">inches</option>
+          <option value="Ft">feet</option>
+          <option value="Yd">yards</option>
+          <option value="Mi">miles</option>
+        </select>
+        <br>
+      <br>
+        to 
+        <br>
+      <br><select id="lgthto" class="tb" onchange="convUnits('lgth')">
+          <option value="Mm">millimeter</option>
+          <option SELECTED value="Cm">centimeter</option>
+          <option value="M">meter</option>
+          <option value="In">inches</option>
+          <option value="Ft">feet</option>
+          <option value="Yd">yards</option>
+          <option value="Mi">miles</option>
+        </select>
+      </div>
+
+      <div id="grpTemperature" style="display:none;">
+        <h3>Temperature</h3>
+      <input class="tb" type="number" placeholder= "Enter the value" id="tmpamt" onkeyup="convTmp()">
+      <br>
+      <br>
+      from 
+      <br>
+      <br>
+      <select id="tmpfr" class="tb" onchange="convTmp()">
+        <option value="Degc">°C</option>
+        <option SELECTED value="Degf">°F</option>
+        <option value="Degk">K</option>
+        <option value="Degn">°N</option>
+      </select>
+      <br>
+      <br>
+      to 
+      <br>
+      <br>
+      <select id="tmpto" class="tb" onchange="convTmp()">
+        <option SELECTED value="Degc">°C</option>
+        <option value="Degf">°F</option>
+        <option value="Degk">K</option>
+        <option value="Degn">°N</option>
+      </select>
+      </div>
+
+      <div id="grpIT" style="display:none;">
+        <h3>File Size or Internet Speed</h3>
+      <input class="tb" type="number" placeholder= "Enter the value" min="1" id="itamt" onkeyup="convUnits('it')">
+      <br>
+      <br>
+      from
+      <br>
+      <br>
+       <select id="itfr" class="tb" onchange="convUnits('it')">
+        <option value="Bit">bit</option>
+        <option value="Byte">byte</option>
+        <option value="Kb">KB</option>
+        <option SELECTED value="Mb">MB</option>
+        <option value="Gb">GB</option>
+        <option value="Tb">TB</option>
+      </select>
+      <br>
+      <br>
+      to <br>
+      <br>
+      <select id="itto" class="tb" onchange="convUnits('it')">
+        <option value="Bit">bit</option>
+        <option value="Byte">byte</option>
+        <option SELECTED value="Kb">KB</option>
+        <option value="Mb">MB</option>
+        <option value="Gb">GB</option>
+        <option value="Tb">TB</option>
+      </select>
+      </div>
+      <br>
+
+    <div id="result" >
+      <div id="result">&nbsp;</div>
+      <br>
+      <br>
+      <div id="resulttable">&nbsp;</div>
+    </div>
+    </div>
+
+
+  </body>
+</html>
